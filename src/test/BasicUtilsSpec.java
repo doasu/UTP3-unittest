@@ -1,8 +1,13 @@
 package test;
 
 import main.BasicUtils;
+
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestFactory;
+
+import java.util.stream.Stream;
 
 public class BasicUtilsSpec
 {
@@ -75,6 +80,11 @@ public void countingVowelsInNullReturnsThrowsException()
         Assertions.assertThrows(
                 NullPointerException.class, () -> BasicUtils.vowelCount(null)
         );
+}
+
+@TestFactory
+public Stream<DynamicTest> isVowelReturnsTrueForAllPossibleValues()
+{
 }
 
 }
