@@ -4,7 +4,7 @@ public class BasicUtils
 {
 public static String reversed(String str)
 {
-        return (str != null)
+        return ( str != null )
                 ? new StringBuilder(str).reverse().toString()
                 : null;
 }
@@ -21,6 +21,6 @@ public static int vowelCount(String str)
 
 public static boolean isVowel(char c)
 {
-        return "aeio".contains(String.valueOf(c));
+        return "aeiouy".contains(String.valueOf(c));
 }
 }
