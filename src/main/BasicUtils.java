@@ -4,7 +4,9 @@ public class BasicUtils
 {
 public static String reversed(String str)
 {
-        return new StringBuilder(str).reverse().toString();
+        return (str != null)
+                ? new StringBuilder(str).reverse().toString()
+                : null;
 }
 
 public static int vowelCount(String str)
