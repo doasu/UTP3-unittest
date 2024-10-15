@@ -75,6 +75,7 @@ public void countingVowelsInConsonantStringReturnsZero()
         );
 }
 
+@SuppressWarnings("DataFlowIssue")
 @Test
 public void countingVowelsInNullReturnsThrowsException()
 {
