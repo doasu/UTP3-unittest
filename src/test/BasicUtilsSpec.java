@@ -19,4 +19,10 @@ public void reversingArbitraryStringProducesCorrectResult()
         );
 }
 
+@Test
+public void reversingNullReturnsNull()
+{
+        Assertions.assertNull(BasicUtils.reversed(null));
+}
+
 }
