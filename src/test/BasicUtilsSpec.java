@@ -86,6 +86,13 @@ public void countingVowelsInNullReturnsThrowsException()
 @TestFactory
 public Stream<DynamicTest> isVowelReturnsTrueForAllPossibleValues()
 {
+        return Stream.
+                of('a', 'e', 'i', 'o', 'u', 'y').
+                map(vowel -> DynamicTest.dynamicTest(
+                        // Display name of the test:
+                        "'" + vowel + "' is a vowel",
+                        // Test to execute:
+                        () -> assertTrue(BasicUtils.isVowel(vowel))));
 }
 
 }
