@@ -1,13 +1,14 @@
 package test;
 
 import main.BasicUtils;
-
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 
 import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 
 public class BasicUtilsSpec
 {
@@ -15,11 +16,11 @@ public class BasicUtilsSpec
 @Test
 public void reversingArbitraryStringProducesCorrectResult()
 {
-        Assertions.assertEquals(
+        assertEquals(
                 "txet modnar", BasicUtils.reversed("random text")
         );
 
-        Assertions.assertEquals(
+        assertEquals(
                 "bd#sa6f3basż;", BasicUtils.reversed(";żsab3f6as#db")
         );
 }
@@ -27,17 +28,17 @@ public void reversingArbitraryStringProducesCorrectResult()
 @Test
 public void reversingNullReturnsNull()
 {
-        Assertions.assertNull(BasicUtils.reversed(null));
+        assertNull(BasicUtils.reversed(null));
 }
 
 @Test
 public void countingVowelsInArbitraryStringProducesCorrectResult()
 {
-        Assertions.assertEquals(
+        assertEquals(
                 5, BasicUtils.vowelCount("Ala ma kota")
         );
 
-        Assertions.assertEquals(
+        assertEquals(
                 19, BasicUtils.vowelCount(
                         "Lorem ipsum dolor sit amet, "
                         + "consectetur adipiscing elit.")
@@ -47,17 +48,17 @@ public void countingVowelsInArbitraryStringProducesCorrectResult()
 @Test
 public void countingVowelsInEmptyStringReturnsZero()
 {
-        Assertions.assertEquals(0, BasicUtils.vowelCount(""));
+        assertEquals(0, BasicUtils.vowelCount(""));
 }
 
 @Test
 public void countingVowelsInVowelStringProducesCorrectResult()
 {
-        Assertions.assertEquals(
+        assertEquals(
                 7, BasicUtils.vowelCount("aoieoyu")
         );
 
-        Assertions.assertEquals(
+        assertEquals(
                 6, BasicUtils.vowelCount("yuoiea")
         );
 }
@@ -65,11 +66,11 @@ public void countingVowelsInVowelStringProducesCorrectResult()
 @Test
 public void countingVowelsInConsonantStringReturnsZero()
 {
-        Assertions.assertEquals(
+        assertEquals(
                 0, BasicUtils.vowelCount("qlmlqwnwbvmjbnfbm")
         );
 
-        Assertions.assertEquals(
+        assertEquals(
                 0, BasicUtils.vowelCount("lslsnnzxcvvbbt")
         );
 }
@@ -77,7 +78,7 @@ public void countingVowelsInConsonantStringReturnsZero()
 @Test
 public void countingVowelsInNullReturnsThrowsException()
 {
-        Assertions.assertThrows(
+        assertThrows(
                 NullPointerException.class, () -> BasicUtils.vowelCount(null)
         );
 }
