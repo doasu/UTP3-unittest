@@ -74,9 +74,15 @@ void addingNullObjectProducesCorrectResult()
 
 @Test
 void gettingOperationsCountReturnsSumOfAdditionsAndRemovals()
-{// TODO implement this test
-        gettingAdditionsCountReturnsCorrectResult();
-        gettingRemovalsCountReturnsCorrectResult();
+{
+        int OCSnapshot = trackingSet.getAdditionsCount() + trackingSet.getRemovalsCount();
+
+        trackingSet.remove(testObject); // should increment the RemovalsCount
+        trackingSet.add(testObject);    // should increment the Additions Count
+
+        assertEquals(
+                OCSnapshot + 2, trackingSet.getAdditionsCount() + trackingSet.getRemovalsCount()
+        );
 }
 
 @Test
