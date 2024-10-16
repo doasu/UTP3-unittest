@@ -32,6 +32,15 @@ void removingItemIncrementsRemovalsCounter()
                 RCSnapshot + 1, trackingSet.getRemovalsCount()
         );
 }
+
+@Test
+void removingNonExistentItemThrowsException()
+{
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> trackingSet.remove("nonexistant object")
+        );
+}
 }
 
 @Test
