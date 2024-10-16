@@ -61,9 +61,14 @@ void addingItemIncrementsAdditionsCounter()
 }
 
 @Test
-void removingItemIncrementsRemovalsCounter()
-{// TODO implement this test
+void addingNullObjectProducesCorrectResult()
+{
+        int ACSnapshot = trackingSet.getAdditionsCount();
+        trackingSet.add(null);
 
+        assertEquals(
+                ACSnapshot + 1, trackingSet.getAdditionsCount()
+        );
 }
 
 @Test
