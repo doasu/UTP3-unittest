@@ -19,11 +19,8 @@ private static       TrackingSet<Object> trackingSet;
 void setUpTestInstance()
 {
         trackingSet = new TrackingSet<>();
-        trackingSet.add("Ala ma kota");
-        trackingSet.add("Hello, world!");
-        trackingSet.add(2137);
-        trackingSet.add(13.37D);
-        trackingSet.add(4.20F);
+        trackingSet.add(testObject);
+}
 
 @Test
 void removingItemIncrementsRemovalsCounter()
