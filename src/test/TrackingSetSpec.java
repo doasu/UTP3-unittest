@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class TrackingSetSpec
 {
 
+// Object is final, we don't want to change it
+private static final Object              testObject = "foo";
 // A new instance of a TrackingSet will
 // be placed here before each test.
 private static       TrackingSet<Object> trackingSet;
