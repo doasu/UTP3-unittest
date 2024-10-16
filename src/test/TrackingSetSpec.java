@@ -41,6 +41,18 @@ void removingNonExistentItemThrowsException()
                 () -> trackingSet.remove("nonexistant object")
         );
 }
+
+@Test
+void addingExistingItemDoesntIncrementAdditionsCounter()
+{
+        int ACSnapshot = trackingSet.getAdditionsCount();
+
+        trackingSet.add(testObject);    // already exists in the HashSet
+        trackingSet.add("foo");         // already exists in the HashSet
+
+        assertEquals(
+                ACSnapshot, trackingSet.getAdditionsCount()
+        );
 }
 
 @Test
