@@ -57,7 +57,8 @@ void addingExistingItemDoesntIncrementAdditionsCounter()
 
 @Test
 void addingItemIncrementsAdditionsCounter()
-{// TODO implement this test
+{
+        addingNullObjectProducesCorrectResult();
 }
 
 @Test
