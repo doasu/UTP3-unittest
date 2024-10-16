@@ -11,7 +11,7 @@ class TrackingSetSpec
 
 // A new instance of a TrackingSet will
 // be placed here before each test.
-private TrackingSet<Object> trackingSet;
+private static       TrackingSet<Object> trackingSet;
 
 @BeforeEach
 void setUpTestInstance()
