@@ -24,6 +24,17 @@ void setUpTestInstance()
         trackingSet.add(2137);
         trackingSet.add(13.37D);
         trackingSet.add(4.20F);
+
+@Test
+void removingItemIncrementsRemovalsCounter()
+{
+        int RCSnapshot = trackingSet.getRemovalsCount();
+        trackingSet.remove(testObject);
+
+        assertEquals(
+                RCSnapshot + 1, trackingSet.getRemovalsCount()
+        );
+}
 }
 
 @Test
